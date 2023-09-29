@@ -593,7 +593,9 @@ public class IOUtil {
 
 			@Override
 			public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-				Files.delete(file);
+				if (!file.getFileName().toString().startsWith(".nfs")) {
+					Files.delete(file);
+				}
 				return FileVisitResult.CONTINUE;
 			}
 
