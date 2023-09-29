@@ -262,10 +262,10 @@ public class CloseSuppressPath implements Path, Closeable {
 
 	@Override
 	public void close() throws IOException {
-		if (isDir) {
-			IOUtil.deleteDirRecurse(this);
-		} else {
-			Files.deleteIfExists(this);
-		}
+//		if (isDir) {
+//			IOUtil.deleteDirRecurse(this);
+//		} else {
+//			Files.deleteIfExists(this);
+//		}
 	}
 }
