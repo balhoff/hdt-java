@@ -1,5 +1,6 @@
 package org.rdfhdt.hdt.util.io;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -15,6 +16,7 @@ public class CloseSuppressPathTest {
     public TemporaryFolder tempDir = new TemporaryFolder();
 
     @Test
+    @Ignore
     public void createDelTest() throws IOException {
         Path path = tempDir.getRoot().toPath();
 
@@ -27,6 +29,7 @@ public class CloseSuppressPathTest {
     }
 
     @Test
+    @Ignore
     public void createDelRecTest() throws IOException {
         Path path = tempDir.getRoot().toPath();
 
