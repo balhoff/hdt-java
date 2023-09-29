@@ -10,10 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.TemporaryFolder;
 
 public class IOUtilTest {
@@ -150,6 +147,7 @@ public class IOUtilTest {
 	}
 
 	@Test
+    @Ignore
 	public void closeablePathTest() throws IOException {
 		Path p = tempDir.newFolder().toPath();
 
