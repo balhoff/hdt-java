@@ -131,7 +131,7 @@ public class HDTCat implements ProgressListener {
             colorTool.logValue("HDT saved to file in .. ", sw.stopAndShow());
             Files.deleteIfExists(Path.of(location + "dictionary"));
             Files.deleteIfExists(Path.of(location+"triples"));
-            FileUtils.deleteDirectory(theDir);
+            //FileUtils.deleteDirectory(theDir);
 
 
             // Generate index and dump it to .hdt.index file
