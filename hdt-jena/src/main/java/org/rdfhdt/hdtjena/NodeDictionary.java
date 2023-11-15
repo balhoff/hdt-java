@@ -190,6 +190,27 @@ public class NodeDictionary {
 		}
 		return new TripleID(subject, predicate, object);
 	}
+
+	public TripleID getTriplePatID(Node jenaSubject, Node jenaPredicate, Node jenaObject, Node jenaGraph) {
+		long subject=0, predicate=0, object=0, graph=0;
+
+		if (jenaSubject != null && jenaSubject != Node.ANY) {
+			subject = getIntID(jenaSubject, TripleComponentRole.SUBJECT);
+		}
+
+		if (jenaPredicate != null && jenaPredicate != Node.ANY) {
+			predicate = getIntID(jenaPredicate, TripleComponentRole.PREDICATE);
+		}
+
+		if (jenaObject != null && jenaObject != Node.ANY) {
+			object = getIntID(jenaObject, TripleComponentRole.OBJECT);
+		}
+
+		if (jenaGraph != null && jenaGraph != Node.ANY) {
+			graph = getIntID(jenaGraph, TripleComponentRole.GRAPH);
+		}
+		return new TripleID(subject, predicate, object, graph);
+	}
 	
 	public static PrefixMapping getMapping(ExecutionContext ctx) {
 		Query query = ctx.getContext().get(ARQConstants.sysCurrentQuery);

@@ -52,6 +52,11 @@ public class HDTStatistics {
 		this.hdt = graph.getHDT();
 	}
 
+	public HDTStatistics(NodeDictionary dictionary, HDT hdt) {
+		this.nodeDictionary = dictionary;
+		this.hdt = hdt;
+	}
+
 	public long getNumberOfMatches(Node subject, Node predicate, Node object) {
 		try {
 			final BitmapTriples triples = (BitmapTriples) hdt.getTriples();
