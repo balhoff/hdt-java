@@ -53,10 +53,10 @@ public class HDTJenaQuadIterator extends NiceIterator<Quad> {
     public Quad next() {
         TripleID triple = iterator.next();
         return new Quad(
+                nodeDictionary.getNode(triple.getGraph(), TripleComponentRole.GRAPH),
                 nodeDictionary.getNode(triple.getSubject(), TripleComponentRole.SUBJECT),
                 nodeDictionary.getNode(triple.getPredicate(), TripleComponentRole.PREDICATE),
-                nodeDictionary.getNode(triple.getObject(), TripleComponentRole.OBJECT),
-                nodeDictionary.getNode(triple.getGraph(), TripleComponentRole.GRAPH)
+                nodeDictionary.getNode(triple.getObject(), TripleComponentRole.OBJECT)
         );
     }
 
