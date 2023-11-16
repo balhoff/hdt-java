@@ -83,12 +83,19 @@ public class NodeDictionary {
 		} else {
 			cacheIDtoNode[2] = new DictionaryCacheArray<>((int) dictionary.getNobjects());
 		}
+
+		if (dictionary.getNgraphs() > idToNodeSize) {
+			cacheIDtoNode[3] = new DictionaryCacheLRI<>(idToNodeSize);
+		} else {
+			cacheIDtoNode[3] = new DictionaryCacheArray<>((int) dictionary.getNgraphs());
+		}
 		
 		// NODE TO ID
 		// Disabled, it does not make so much impact.
 		cacheNodeToId[0] = DummyMap.getInstance();
 		cacheNodeToId[1] = DummyMap.getInstance();
 		cacheNodeToId[2] = DummyMap.getInstance();
+		cacheNodeToId[3] = DummyMap.getInstance();
 		
 //		final int nodeToIDSize = 1000;
 //		

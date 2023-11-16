@@ -16,6 +16,7 @@ public class BitmapQuadsIteratorG extends BitmapTriplesIterator {
 		super();
 		this.triples = triples;
 		this.returnTriple = new TripleID();
+		this.returnTriple.setGraph(pattern.getGraph());
 		this.pattern = new TripleID();
 		this.bitmapGraph = triples
 			.getQuadInfoAG()
